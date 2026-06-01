@@ -1,0 +1,92 @@
+$primaryColor: #4527a4;
+
+.dashicons {
+  font-family: dashicons !important;
+}
+
+.bBlocksInspectorInfo {
+  padding: 6px;
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+  }
+}
+
+.wp-block-eov-embed-office-viewer {
+  .file-uploader-page {
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+.driveBtn,
+.addCrBtn {
+  background-color: #4527a4;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.addCrBtn > a {
+  text-decoration: none;
+  color: white;
+}
+
+.driveBtn.signOut {
+  margin-left: 7px;
+}
+
+.driveBtn:hover {
+  background-color: #361d82;
+}
+
+.bpleov-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  margin-left: 0 !important;
+
+  svg {
+    width: 18px !important;
+    height: 18px !important;
+    fill: none;
+    stroke: #226df5;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    display: inline-block;
+  }
+}
+
+.eov-download-btn {
+  margin-bottom: 30px;
+}
+
+.eov_wrapper {
+  position: relative;
+}
+
+.eov-editor-selection-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  cursor: default;
+  background: transparent;
+} 
+
+.eov-google-picker-btn-wrapper {
+  width: 240px;
+}
