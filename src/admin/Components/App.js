@@ -10,8 +10,7 @@ import Layout from './Layout';
 import Welcome from './Welcome';
 import { demoInfo, pricingInfo } from '../utils/data';
 
-const App = (props) => {
-  const { isPremium, hasPro } = props;
+const App = (props) => { 
 
   return <Router>
     <Routes>
@@ -22,11 +21,9 @@ const App = (props) => {
 
         <Route path='demos' element={<Demos demoInfo={demoInfo} {...props} />} />
 
-        {!isPremium && <Route path='pricing' element={<Pricing pricingInfo={pricingInfo} options={{}} {...props} />} />}
+         <Route path='pricing' element={<Pricing pricingInfo={pricingInfo} options={{}} {...props} />} />
 
-        {!isPremium && <Route path='feature-comparison' element={<FeatureCompare plans={['free', 'pro']} {...props} />} />}
-
-        {hasPro && <Route path='activation' element={<Activation {...props} />} />}
+        <Route path='feature-comparison' element={<FeatureCompare plans={['free', 'pro']} {...props} />} /> 
 
         <Route path='our-plugins' element={<OurPlugins {...props} />} />
 

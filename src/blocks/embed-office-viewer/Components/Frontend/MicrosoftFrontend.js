@@ -3,10 +3,7 @@ import React from 'react';
 
 const MicrosoftFrontend = ({ attributes, onLoad }) => {
     const { officeViewer } = attributes;
-    const { officeFile, height, width, isRemoveDownloadBtn, isRemoveFullScreen } = officeViewer;
-
-    const fileExtension = officeFile?.url?.split('.').pop().toLowerCase();
-
+    const { officeFile, height, width } = officeViewer;
 
     return <>
         {
@@ -20,14 +17,6 @@ const MicrosoftFrontend = ({ attributes, onLoad }) => {
                     className="eov-ms-iframe"
                     onLoad={onLoad}
                 />
-                {
-                    isRemoveDownloadBtn && (fileExtension === 'pptx') &&
-                    <div className="eov-ms-remove-download" />
-                }
-                {
-                    isRemoveFullScreen && (fileExtension === 'pptx') &&
-                    <div className="eov-ms-remove-fullscreen" />
-                }
             </div> : null
         }
     </>

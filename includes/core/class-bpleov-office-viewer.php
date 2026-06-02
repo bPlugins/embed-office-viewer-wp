@@ -1,5 +1,8 @@
 <?php
 namespace BPLEOV\Core;
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 class OfficeViewer {
     protected static $_instance = null;    
@@ -12,11 +15,9 @@ class OfficeViewer {
             add_filter( 'gettext', [$this, 'eov_change_publish_button'], 10, 2 );
 
             add_filter( 'post_updated_messages', [$this, 'eov_updated_messages'] );
-            add_action( 'edit_form_after_title', [$this, 'eov_shortcode_area'] );
-            add_filter( 'admin_footer_text', [$this, 'eov_admin_footer'] );	 
+            add_action( 'edit_form_after_title', [$this, 'eov_shortcode_area'] ); 
             add_filter( 'manage_officeviewer_posts_columns', [$this, 'ST4_columns_head_only_officeviewer'], 10 );
-            add_action( 'manage_officeviewer_posts_custom_column', [$this, 'ST4_columns_content_only_officeviewer'], 10, 2 );
-            add_action( 'add_meta_boxes', [$this, 'eov_myplugin_add_meta_box'] );
+            add_action( 'manage_officeviewer_posts_custom_column', [$this, 'ST4_columns_content_only_officeviewer'], 10, 2 ); 
             
             add_action( 'admin_head-post.php', [$this, 'eov_hide_publishing_actions'] );
             add_action( 'admin_head-post-new.php', [$this, 'eov_hide_publishing_actions'] );
@@ -32,7 +33,7 @@ class OfficeViewer {
         return self::$_instance;
     }
 
-    function ovp_create_post_type() {
+    public function ovp_create_post_type() {
         register_post_type( 'officeviewer', array(
             'labels'              => array(
                 'name'          => __( 'Office Viewer', 'embed-office-viewer' ),
@@ -116,15 +117,7 @@ class OfficeViewer {
                 });
             </script>
         <?php endif;
-    }
-
-    public function eov_admin_footer( $text ) {
-        if ( self::$post_type == get_post_type() ) {
-            $url = 'https://wordpress.org/support/plugin/embed-office-viewer/reviews/?filter=5#new-post';
-            $text = sprintf( __( 'If you like <strong>Embed Office Viewer</strong> please leave us a <a href="%s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating. Your Review is very important to us as it helps us to grow more. ', 'embed-office-viewer' ), $url );
-        }
-        return $text;
-    }
+    } 
 
     // CREATE TWO FUNCTIONS TO HANDLE THE COLUMN
     public function ST4_columns_head_only_officeviewer( $defaults ) {
@@ -137,24 +130,9 @@ class OfficeViewer {
 
     public function ST4_columns_content_only_officeviewer( $column_name, $post_id ) {
         if ( $column_name == 'shortcode' ) {
-            echo '<div class="eov_front_shortcode"><input style="text-align: center; border: none; outline: none; background-color: #1e8cbe; color: #fff; padding: 4px 10px; border-radius: 3px;" value="[office_doc id=' . esc_attr( $post_id ) . ']" ><span class="htooltip">Copy To Clipboard</span></div>';
+            echo '<div class="eov_front_shortcode"><input style="text-align: center;" value="[office_doc id=' . esc_attr( $post_id ) . ']" readonly><span class="htooltip">Copy To Clipboard</span></div>';
         }
-    }
-
-    public function eov_myplugin_add_meta_box() {
-        add_meta_box(
-            'donation',
-            __( 'Support Office Viewer', 'embed-office-viewer' ),
-            [$this, 'eov_review_callback'],
-            'officeviewer',
-            'side'
-        );
-    }
-
-    public function eov_review_callback() {
-        echo 'If you like <strong>Embed Office Viewer </strong> Plugin, please leave us a <a href="https://wordpress.org/support/plugin/embed-office-viewer/reviews/?filter=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733 rating.</a> Your Review is very important to us as it helps us to grow more.
-        <p>Need some improvement ? <a href="mailto:support@bplugins.com">Please let me know </a> how can i improve the Plugin.</p>';
-    }
+    } 
 
     public function eov_hide_publishing_actions() {
         global $post;
@@ -186,10 +164,7 @@ class OfficeViewer {
        <style>#wpcontent { padding-left: 0 !important; }</style>
        <div id='bpleovAdminDashboard'
             data-info='<?php echo esc_attr( wp_json_encode( [
-                'version' => BPLEOV_VERSION,
-                'isPremium' => bpleov_fs()->can_use_premium_code(),
-                'hasPro' => true,
-                'licenseActiveNonce' => wp_create_nonce( 'bPlLicenseActivation' )
+                'version' => BPLEOV_VERSION
             ] ) ); ?>'
         ></div>
         <?php

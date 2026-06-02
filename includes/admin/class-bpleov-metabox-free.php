@@ -24,31 +24,17 @@ class MetaboxFree
             CSF::createSection($prefix, array(
                 'title' => __('Document Settings', 'embed-office-viewer'),
                 'fields' => array(
-                    Functions::bpleov_lock_field(array(
-                        'id' => 'bpleov_document_source',
-                        'title' => Functions::bpleov_pro_title(__('Document Source', 'embed-office-viewer')),
-                        'type' => 'button_set',
-                        'options' => array(
-                            'library' => __('Library', 'embed-office-viewer'),
-                            'google' => __('Google Drive', 'embed-office-viewer'),
-                            'dropbox' => __('Dropbox', 'embed-office-viewer'),
-                        ),
-                        'multiselect' => false,
-                        'default' => 'library',
-                        'attributes' => array('id' => 'document_source_btn')
-                    )),
                     array(
                         'id' => 'bpleov_view_type',
-                        'title' => __('Viewer', 'embed-office-viewer'),
+                        'title' => __('Viewer Type', 'embed-office-viewer'),
                         'type' => 'radio',
                         'options' => array(
                             'gooogle' => __('Google Doc Viewer', 'embed-office-viewer'),
-                            'microsoft' => __('Microsoft Online Viewer', 'embed-office-viewer'),
-                            'js' => __('JS Viewer', 'embed-office-viewer'),
+                            'microsoft' => __('Microsoft Online Viewer', 'embed-office-viewer') 
                         ),
                         'default' => 'microsoft',
                         'class' => 'viewer-type',
-                        'dependency' => array('bpleov_document_source', '==', 'library'),
+                        'desc' => __('Choose how to display your files. Microsoft works best for Word, Excel, and PowerPoint, while Google is great for PDFs.', 'embed-office-viewer'),
                     ),
                     array(
                         'id' => 'bpleov_document',
@@ -62,7 +48,6 @@ class MetaboxFree
                         'button_title' => 'Choose File',
                         'placeholder' => 'http://',
                         'class' => 'eov_document',
-                        'dependency' => array('bpleov_document_source', '==', 'library'),
                     ),
                     array(
                         'id' => 'bpleov_document_width',
@@ -90,6 +75,14 @@ class MetaboxFree
                         'desc' => __('Set how tall the document viewer should be. Leave blank to use the default height (900px).', 'embed-office-viewer'),
                         'units' => array('px'),
                     ),
+                    Functions::bpleov_pro_feature_list(array(
+                        __('Import Files Directly from Google Drive & Dropbox', 'embed-office-viewer'),
+                        __('Fast Custom PDF Viewer (Highly optimized for PDF files)', 'embed-office-viewer'),
+                        __('Disable Right-Click to Protect your content', 'embed-office-viewer'),
+                        __('Hide Download & Fullscreen Icons on Office files', 'embed-office-viewer'),
+                        __('Display File Name Headers & Premium Download Buttons', 'embed-office-viewer'),
+                        __('Hide the Pop-out Button to Secure Documents from Direct URL Access', 'embed-office-viewer'),
+                    ))
                 ),
             ));
 
@@ -97,44 +90,14 @@ class MetaboxFree
             CSF::createSection($prefix, array(
                 'title' => __('Security & Restrictions', 'embed-office-viewer'),
                 'fields' => array(
-                    Functions::bpleov_lock_field([
-                        'id' => 'bpleov_disbale_popout',
-                        'type' => 'switcher',
-                        'title' => Functions::bpleov_pro_title(esc_html__('Hide Pop-out Button', 'embed-office-viewer')),
-                        'desc' => esc_html__('Prevents users from opening the document in a separate browser tab or window. Applies when using Google Viewer with Library source.', 'embed-office-viewer'),
-                    ]),
-                    Functions::bpleov_lock_field([
-                        'id' => 'bpleov_show_name',
-                        'type' => 'switcher',
-                        'title' => Functions::bpleov_pro_title(esc_html__('Display File Name', 'embed-office-viewer')),
-                        'desc' => esc_html__('Shows the name of your document clearly at the top of the viewer. Applies to Library source only.', 'embed-office-viewer'),
-                    ]),
-                    Functions::bpleov_lock_field([
-                        'id' => 'bpleov_download_button',
-                        'type' => 'switcher',
-                        'title' => Functions::bpleov_pro_title(esc_html__('Add Download Button', 'embed-office-viewer')),
-                        'desc' => esc_html__('Places a visible download button on top, allowing visitors to easily save the file. Applies to Library source only.', 'embed-office-viewer'),
-                    ]),
-                    Functions::bpleov_lock_field([
-                        'id' => 'isRemoveDownloadBtn',
-                        'type' => 'switcher',
-                        'title' => Functions::bpleov_pro_title(esc_html__('Hide Built-in Download Option', 'embed-office-viewer')),
-                        'desc' => esc_html__('Removes the default download button provided natively by the document reading engine. Applies to Microsoft Viewer with PPTX files.', 'embed-office-viewer'),
-                        'class' => 'eov_disable_download_btn'
-                    ]),
-                    Functions::bpleov_lock_field([
-                        'id' => 'isRemoveFullScreen',
-                        'type' => 'switcher',
-                        'title' => Functions::bpleov_pro_title(esc_html__('Hide Built-in Full Screen Option', 'embed-office-viewer')),
-                        'desc' => esc_html__('Removes the default full-screen button provided natively by the document reading engine. Applies to Microsoft Viewer with PPTX files.', 'embed-office-viewer'),
-                        'class' => 'eov_disable_download_btn'
-                    ]),
-                    Functions::bpleov_lock_field([
-                        'id' => 'bpleov_right_click',
-                        'type' => 'switcher',
-                        'title' => Functions::bpleov_pro_title(esc_html__('Protect Content (Disable Right-click)', 'embed-office-viewer')),
-                        'desc' => esc_html__('Stops visitors from right-clicking the document, making it harder to copy or download unauthorized content.', 'embed-office-viewer'),
-                    ]),
+                    Functions::bpleov_pro_feature_list(array(
+                        __('Import Files Directly from Google Drive & Dropbox', 'embed-office-viewer'),
+                        __('Fast Custom PDF Viewer (Highly optimized for PDF files)', 'embed-office-viewer'),
+                        __('Disable Right-Click to Prevent Copying & Content Theft', 'embed-office-viewer'),
+                        __('Hide Native Download & Fullscreen Icons on PowerPoint/Office files', 'embed-office-viewer'),
+                        __('Display Custom File Name Headers & Premium Download Buttons', 'embed-office-viewer'),
+                        __('Hide the Pop-out Button to Secure Documents from Direct URL Access', 'embed-office-viewer'),
+                    ))
                 ),
             ));
 
@@ -154,37 +117,14 @@ class MetaboxFree
             CSF::createSection($prefix, array(
                 'id' => 'bpleov_onedrive_tab',
                 'fields' => array(
-                    Functions::bpleov_lock_field(
-                        array(
-                            'id' => 'bpleov_dropbox_appkey',
-                            'title' => Functions::bpleov_pro_title(__('Dropbox App Key', 'embed-office-viewer')),
-                            'type' => 'text',
-                            'attributes' => array('id' => 'bpleov_dropbox_appkey'),
-                            'desc' => 'Please <a href="https://www.dropbox.com/developers/apps/create" target="_blank">Click Here</a> to create Dropbox API key',
-                        )
-                    ),
-                    array(
-                        'id' => "content",
-                        'type' => 'content',
-                        'content' => __('Google API Setup', 'embed-office-viewer'),
-                        'class' => 'csf-field-subheading',
-                    ),
-                    Functions::bpleov_lock_field(array(
-                        'id' => 'bpleov_google_apikey',
-                        'type' => 'text',
-                        'title' => Functions::bpleov_pro_title(__('Google API key', 'embed-office-viewer')),
-                        'before' => '<p><a href="https://console.cloud.google.com/" target="_blank">Click Here</a> To Get Google Credentials</p>',
-                    )),
-                    Functions::bpleov_lock_field(array(
-                        'id' => 'bpleov_google_client_id',
-                        'type' => 'text',
-                        'title' => Functions::bpleov_pro_title(__('Google Client ID', 'embed-office-viewer')),
-                    )),
-                    Functions::bpleov_lock_field(array(
-                        'id' => 'bpleov_google_project_number',
-                        'type' => 'text',
-                        'title' => Functions::bpleov_pro_title(__('Google Project Number', 'embed-office-viewer')),
-                    )),
+                    Functions::bpleov_pro_feature_list(array(
+                        __('Import Files Directly from Google Drive & Dropbox', 'embed-office-viewer'),
+                        __('Fast Custom PDF Viewer (Highly optimized for PDF files)', 'embed-office-viewer'),
+                        __('Disable Right-Click to Protect your content', 'embed-office-viewer'),
+                        __('Hide Download & Fullscreen Icons on Office files', 'embed-office-viewer'),
+                        __('Display File Name Headers & Premium Download Buttons', 'embed-office-viewer'),
+                        __('Hide the Pop-out Button to Secure Documents from Direct URL Access', 'embed-office-viewer'),
+                    ))
                 ),
             ));
 

@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
 import { uploadMedia } from "@wordpress/media-utils";
 import "./UploadDocuments.scss";
-import DropboxChooser from "../Common/Viewers/DropboxChooser";
-import GooglePicker from "../Common/Viewers/GooglePicker";
 import { updateData } from "../../../../../../bpl-tools/utils/functions";
 
 // Sleek, minimal icons for navigation
@@ -27,20 +25,6 @@ const urlIcon = (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-  </svg>
-);
-
-const googleIcon = (
-  <svg width="15" height="15" viewBox="0 0 1440 1440" fill="currentColor">
-    <path d="M960 90l450 780H930L480 90h480z" fill="#0066da" />
-    <path d="M480 90l240 420-450 780L30 870 480 90z" fill="#00aa47" />
-    <path d="M720 510l210 360H60l210-360h450z" fill="#ffba00" />
-  </svg>
-);
-
-const dropboxIcon = (
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M6 1.998l6 3.864-6 3.862-6-3.862zm0 15.426l6-3.863 6 3.863-6 3.864zm6-11.562l6-3.864 6 3.864-6 3.862zm0 7.698l6-3.862 6 3.862-6 3.864zm-6 0l-6-3.862 6-3.864 6 3.864z" fill="#0061ff"/>
   </svg>
 );
 
@@ -207,52 +191,6 @@ const UploadDocuments = ({ attributes, setAttributes }) => {
             </div>
           </div>
         )}
-
-        {/* Google Drive */}
-        {activeUploadOption === "google-drive" && (
-          <div className="workspace-pane">
-            <div className="cloud-zone">
-              <div className="zone-content">
-                <div className="cloud-brand-logo google">
-                  <svg width="32" height="32" viewBox="0 0 1440 1440" fill="currentColor">
-                    <path d="M960 90l450 780H930L480 90h480z" fill="#0066da" />
-                    <path d="M480 90l240 420-450 780L30 870 480 90z" fill="#00aa47" />
-                    <path d="M720 510l210 360H60l210-360h450z" fill="#ffba00" />
-                  </svg>
-                </div>
-                <h3>Google Drive</h3>
-                <p className="cloud-desc">
-                  Select and embed documents directly from your Google Drive.
-                </p>
-                <div className="cloud-picker-wrapper">
-                  <GooglePicker attributes={attributes} setAttributes={setAttributes} />
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Dropbox */}
-        {activeUploadOption === "dropbox" && (
-          <div className="workspace-pane">
-            <div className="cloud-zone">
-              <div className="zone-content">
-                <div className="cloud-brand-logo dropbox">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M6 1.998l6 3.864-6 3.862-6-3.862zm0 15.426l6-3.863 6 3.863-6 3.864zm6-11.562l6-3.864 6 3.864-6 3.862zm0 7.698l6-3.862 6 3.862-6 3.864zm-6 0l-6-3.862 6-3.864 6 3.864z" fill="#0061ff" />
-                  </svg>
-                </div>
-                <h3>Dropbox</h3>
-                <p className="cloud-desc">
-                  Select and embed documents directly from your Dropbox account.
-                </p>
-                <div className="cloud-picker-wrapper">
-                  <DropboxChooser attributes={attributes} setAttributes={setAttributes} />
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
 
       <div className="uploader-footer-tabs">
@@ -276,20 +214,6 @@ const UploadDocuments = ({ attributes, setAttributes }) => {
         >
           {urlIcon}
           <span>URL</span>
-        </button>
-        <button
-          onClick={() => setActiveUploadOption("google-drive")}
-          className={`tab-btn ${activeUploadOption === "google-drive" ? "active" : ""}`}
-        >
-          {googleIcon}
-          <span>Google Drive</span>
-        </button>
-        <button
-          onClick={() => setActiveUploadOption("dropbox")}
-          className={`tab-btn ${activeUploadOption === "dropbox" ? "active" : ""}`}
-        >
-          {dropboxIcon}
-          <span>Dropbox</span>
         </button>
       </div>
     </div>

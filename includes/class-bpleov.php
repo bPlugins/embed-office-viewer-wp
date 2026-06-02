@@ -25,15 +25,6 @@ class Main {
         if ( ! class_exists( 'CSF' ) ) {
             require_once BPLEOV_PLUGIN_PATH . 'vendor/codestar-framework/codestar-framework.php';
         }
-        
-        if ( file_exists( BPLEOV_PLUGIN_PATH . 'includes/admin/class-bpleov-license-activation.php' ) ) {
-            // Handled via Composer autoloading or required
-            require_once BPLEOV_PLUGIN_PATH . 'includes/admin/class-bpleov-license-activation.php';
-        }
-
-        if ( function_exists( 'bpleov_fs' ) && bpleov_fs()->can_use_premium_code__premium_only() ) {
-            \BPLEOV\MetaboxPro::init();
-        }
 
         if ( function_exists( 'bpleov_fs' ) && bpleov_fs()->is_free_plan() ) {
             \BPLEOV\MetaboxFree::init();
@@ -47,21 +38,17 @@ class Main {
         \BPLEOV\Core\OfficeViewer::instance();
         \BPLEOV\Admin\Admin::instance();
         \BPLEOV\Services\ShortcodeFree::instance();
-        \BPLEOV\Services\ProModal::instance();
-        if ( function_exists( 'bpleov_fs' ) && bpleov_fs()->can_use_premium_code__premium_only() ) {
-            \BPLEOV\Core\GlobalChangesPro::instance();
-            \BPLEOV\ImportMeta::import();
-        }
     }
 
     public static function load_textdomain() {
+        // phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound, WordPress.WP.DeprecatedFunctions.load_plugin_textdomainFound
         load_plugin_textdomain( 'embed-office-viewer', false, dirname( dirname( __FILE__ ) ) . '/languages' );
     }
 
 
 
     public function bpleov_public_scripts() {
-        wp_enqueue_script( 'bpleov', BPLEOV_PLUGIN_DIR . 'assets/js/script.js', array(), '' );
+        wp_enqueue_script( 'bpleov', BPLEOV_PLUGIN_DIR . 'assets/js/script.js', array(), BPLEOV_VERSION, true );
     }
 
     public function upgrade_notice() {
@@ -70,7 +57,7 @@ class Main {
             return;
         }
         $is_office_viewer_page = $page->base == 'edit' && $page->post_type == 'officeviewer';
-        if ( ! bpleov_fs()->can_use_premium_code() && ( $page->base == 'officeviewer_page_bpleov-onedrive' || $page->base == 'officeviewer_page_eov-onedrive' || $is_office_viewer_page ) ) {
+        if ( $page->base == 'officeviewer_page_bpleov-onedrive' || $page->base == 'officeviewer_page_eov-onedrive' || $is_office_viewer_page ) {
         ?>
         <div class="eov_upgrade_notice <?php echo esc_attr( $is_office_viewer_page ? 'officeviewer' : 'settings' ) ?> ">
             <div class="flex">

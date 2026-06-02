@@ -1,5 +1,8 @@
 <?php
 namespace BPLEOV\Services;
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 use BPLEOV\Helper\Functions;
 

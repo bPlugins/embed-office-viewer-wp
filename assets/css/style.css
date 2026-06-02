@@ -1,207 +1,3 @@
-.dropbox-dropin-btn {
-  padding: 4px 20px !important;
-  font-size: 15px !important;
-  padding-bottom: 11px !important;
-  margin-left: 30px;
-}
-
-.eov_onedrive_btn {
-  padding: 3px 15px !important;
-  font-size: 15px !important;
-  padding-bottom: 5px !important;
-}
-
-.eov_onedrive_btn img {
-  margin-right: 5px;
-  vertical-align: bottom;
-}
-
-.eov_ondrive_doc input,
-#dropbox_cloud_file_url,
-#eov_google_document_url {
-  margin-right: 10px;
-}
-
-#eov_onedrive_optoin_client_id,
-#eov_ondeive_file_url {
-  margin-right: 30px;
-}
-
-#google_empty_alert {
-  display: none;
-  transition: 0.5s;
-}
-
-.alert_text {
-  width: 450px;
-  height: 150px;
-  background: #fff;
-  position: fixed;
-  left: 50%;
-  right: 0;
-  top: 50%;
-  bottom: 0;
-  z-index: 999999;
-  transform: translate(-50%, -100%);
-  border-radius: 5px;
-}
-
-.alert_text .g_footer {
-  border-top: 1px solid #ddd;
-  text-align: right;
-}
-
-.alert_text a.g_ok {
-  margin-top: 11px;
-  margin-right: 14px;
-}
-
-.alert_text span {
-  position: absolute;
-  right: 13px;
-  top: 2px;
-  font-size: 20px;
-}
-
-.alert_text span:hover {
-  cursor: pointer;
-}
-
-.alert_text p {
-  padding: 23px;
-  font-size: 14px;
-}
-
-.google_alert_overlay {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: #545454;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  opacity: 0.9;
-}
-
-.document_source_btn .csf--button {
-  margin-right: 25px;
-  opacity: 1 !important;
-  padding: 7px 15px !important;
-  border-radius: 3px !important;
-}
-
-.dropbox-dropin-btn {
-  padding: 7px 7px !important;
-}
-
-@media only screen and (min-width: 45em) {
-  .col-1 {
-    width: 4.33%;
-  }
-
-  .col-2 {
-    width: 12.66%;
-  }
-
-  .col-3 {
-    width: 21%;
-  }
-
-  .col-4 {
-    width: 29.33%;
-  }
-
-  .col-5 {
-    width: 37.66%;
-  }
-
-  .col-6 {
-    width: 46%;
-  }
-
-  .col-7 {
-    width: 54.33%;
-  }
-
-  .col-8 {
-    width: 62.66%;
-  }
-
-  .col-9 {
-    width: 67%;
-  }
-
-  .col-10 {
-    width: 75.33%;
-  }
-
-  .col-11 {
-    width: 83.66%;
-  }
-
-  .col-12 {
-    width: 92%;
-  }
-
-  .hidden-sm {
-    display: block;
-  }
-}
-
-@media only screen and (min-width: 60em) {
-  .container {
-    width: 75%;
-    max-width: 60rem;
-  }
-}
-
-.row [class^="col"] {
-  margin: 0.5rem 1%;
-}
-
-#TB_overlay {
-  background: #000;
-  opacity: 0.7;
-  filter: alpha(opacity=70);
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 100050;
-}
-
-#TB_window {
-  left: 50%;
-  position: fixed;
-  z-index: 105000;
-}
-
-#TB_closeWindowButton {
-  position: absolute;
-  left: auto;
-  right: -30px;
-  width: 29px;
-  height: 29px;
-  border: 0;
-  padding: 0;
-  background: none;
-  cursor: pointer;
-  outline: none;
-  -webkit-transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
-}
-
-#TB_closeWindowButton::before {
-  content: "x";
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 0;
-}
-
 /* OfficeViewer Add New ShortCode */
 .eov_shortcode {
   margin-top: 16px;
@@ -238,6 +34,22 @@
 /* Office Viewer ShortCode Column */
 .eov_front_shortcode input {
   cursor: pointer;
+  background-color: #146ef5;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 6px 12px;
+  border-radius: 0;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.eov_front_shortcode input:hover {
+  background-color: #0b5cd5;
+}
+
+.eov_front_shortcode input:active {
+  transform: scale(0.97);
 }
 
 .eov_front_shortcode {
@@ -248,11 +60,11 @@
 .eov_front_shortcode .htooltip {
   visibility: hidden;
   width: 140px;
-  background-color: #555;
+  background-color: #111;
   color: #fff;
   text-align: center;
-  border-radius: 6px;
-  padding: 5px;
+  border-radius: 0;
+  padding: 6px;
   position: absolute;
   z-index: 1;
   bottom: 150%;
@@ -260,6 +72,7 @@
   margin-left: -75px;
   opacity: 0;
   transition: opacity 0.3s;
+  font-size: 11px;
 }
 
 .eov_front_shortcode .htooltip::after {
@@ -270,79 +83,13 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: #111 transparent transparent transparent;
 }
 
 .eov_front_shortcode:hover .htooltip {
   visibility: visible;
   opacity: 1;
-}
-
-.eov_document_ext_field {
-  display: none !important;
-}
-
-
-.eov-field-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.eov-field-title h4 {
-  margin: 0;
-}
-
-.eov-field-title span {
-  color: #fff;
-  background: #146ef5;
-  padding: 3px 10px;
-  border-radius: 3px;
-  height: fit-content;
-}
-
-.eov-pro-badge {
-  color: #fff;
-  background: #146ef5;
-  padding: 0px 10px;
-  border-radius: 3px;
-  font-size: 12px;
-  margin-left: 8px;
-}
-
-.eov-lock-field.section {
-  opacity: 0.5;
-}
-
-.eov-lock-field .csf-fieldset {
-  opacity: 0.5;
-}
-
-.csf-field.eov-lock-field:hover::after {
-  display: block;
-}
-
-.csf-field.eov-lock-field::before {
-  display: block;
-  width: 100%;
-  height: 100%;
-  content: "";
-  position: absolute;
-  z-index: 999;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-}
-
-.csf-field.eov-lock-field::after {
-  display: none;
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 9999999;
-}
-
+} 
 /* Upgrade Notice */
 .eov_upgrade_notice {
   border: 1px solid #ccc;
@@ -366,7 +113,7 @@
 .eov_upgrade_notice a.button {
   background: #f19610fa;
   border: none;
-  padding: 4px 15px;
+  padding: 0 15px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -396,7 +143,13 @@
   background: #146ef5;
   padding: 6px 40px 6px 15px;
   color: #fff;
-  border-radius: 3px;
+  border-radius: 0;
   display: inline-block;
+}
 
+/* Viewer Type CSS  */
+.viewer-type .csf-fieldset ul {
+  display: flex;
+  gap: 20px;
+  padding-left: 3px;
 }
