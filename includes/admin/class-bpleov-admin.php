@@ -1,7 +1,7 @@
 <?php
 namespace BPLEOV\Admin; 
 
-class Admin {
+class BPLEOV_Admin {
     protected static $_instance = null;
 
     public static function instance() {

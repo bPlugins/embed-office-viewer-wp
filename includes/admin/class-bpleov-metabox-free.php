@@ -1,10 +1,9 @@
 <?php
 namespace BPLEOV;
-use BPLEOV\Helper\Functions;
+use BPLEOV\Helper\BPLEOV_Functions as Functions;
 use CSF;
 
-class MetaboxFree
-{
+class BPLEOV_MetaboxFree {
 
     public static function init()
     {

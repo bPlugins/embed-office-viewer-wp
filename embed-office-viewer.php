@@ -67,6 +67,6 @@ if ( function_exists( 'bpleov_fs' ) ) {
     // Load Main Plugin Class
     require_once BPLEOV_PLUGIN_PATH . 'includes/class-bpleov.php';
     // Initialize
-    BPLEOV\Main::instance();
+    BPLEOV\BPLEOV_Main::instance();
 
 }

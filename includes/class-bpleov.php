@@ -1,8 +1,8 @@
 <?php
 namespace BPLEOV;
-use BPLEOV\Helper\Functions;
+use BPLEOV\Helper\BPLEOV_Functions as Functions;
 
-class Main {
+class BPLEOV_Main {
 
     private static $_instance = null;
 
@@ -27,7 +27,7 @@ class Main {
         }
 
         if ( function_exists( 'bpleov_fs' ) && bpleov_fs()->is_free_plan() ) {
-            \BPLEOV\MetaboxFree::init();
+            \BPLEOV\BPLEOV_MetaboxFree::init();
         }
     }
 
@@ -35,9 +35,9 @@ class Main {
         new \BPLEOVPlugin();
 
         // Initialize singletons (auto-loaded by Composer)
-        \BPLEOV\Core\OfficeViewer::instance();
-        \BPLEOV\Admin\Admin::instance();
-        \BPLEOV\Services\ShortcodeFree::instance();
+        \BPLEOV\Core\BPLEOV_OfficeViewer::instance();
+        \BPLEOV\Admin\BPLEOV_Admin::instance();
+        \BPLEOV\Services\BPLEOV_ShortcodeFree::instance();
     }
 
     public static function load_textdomain() {

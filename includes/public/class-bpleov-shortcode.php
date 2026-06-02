@@ -4,9 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-use BPLEOV\Helper\Functions;
+use BPLEOV\Helper\BPLEOV_Functions as Functions;
 
-class ShortcodeFree {
+class BPLEOV_ShortcodeFree {
     protected static $_instance = null;
 
     public function __construct() {
@@ -87,4 +87,4 @@ class ShortcodeFree {
     }
 }
 
-ShortcodeFree::instance();
+BPLEOV_ShortcodeFree::instance();

@@ -7,16 +7,11 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'BPLEOVPlugin' => $baseDir . '/includes/core/class-bpleov-blocks.php',
-    'BPLEOV\\Admin\\Admin' => $baseDir . '/includes/admin/class-bpleov-admin.php',
-    'BPLEOV\\Core\\GlobalChangesPro' => $baseDir . '/includes/core/class-bpleov-global-changes-pro.php',
-    'BPLEOV\\Core\\OfficeViewer' => $baseDir . '/includes/core/class-bpleov-office-viewer.php',
-    'BPLEOV\\Helper\\Functions' => $baseDir . '/includes/helper/class-bpleov-functions.php',
-    'BPLEOV\\ImportMeta' => $baseDir . '/includes/admin/class-bpleov-import-meta.php',
-    'BPLEOV\\LicenseActivation' => $baseDir . '/includes/admin/class-bpleov-license-activation.php',
-    'BPLEOV\\Main' => $baseDir . '/includes/class-bpleov.php',
-    'BPLEOV\\MetaboxFree' => $baseDir . '/includes/admin/class-bpleov-metabox-free.php',
-    'BPLEOV\\MetaboxPro' => $baseDir . '/includes/admin/class-bpleov-metabox-pro.php',
-    'BPLEOV\\Services\\ProModal' => $baseDir . '/includes/admin/class-bpleov-pro-modal.php',
-    'BPLEOV\\Services\\ShortcodeFree' => $baseDir . '/includes/public/class-bpleov-shortcode.php',
+    'BPLEOV\\Admin\\BPLEOV_Admin' => $baseDir . '/includes/admin/class-bpleov-admin.php',
+    'BPLEOV\\BPLEOV_Main' => $baseDir . '/includes/class-bpleov.php',
+    'BPLEOV\\BPLEOV_MetaboxFree' => $baseDir . '/includes/admin/class-bpleov-metabox-free.php',
+    'BPLEOV\\Core\\BPLEOV_OfficeViewer' => $baseDir . '/includes/core/class-bpleov-office-viewer.php',
+    'BPLEOV\\Helper\\BPLEOV_Functions' => $baseDir . '/includes/helper/class-bpleov-functions.php',
+    'BPLEOV\\Services\\BPLEOV_ShortcodeFree' => $baseDir . '/includes/public/class-bpleov-shortcode.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

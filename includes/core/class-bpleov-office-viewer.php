@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class OfficeViewer {
+class BPLEOV_OfficeViewer {
     protected static $_instance = null;    
     protected static $post_type = 'officeviewer';
 
@@ -172,4 +172,4 @@ class OfficeViewer {
 
 }
 
-OfficeViewer::instance();
+BPLEOV_OfficeViewer::instance();

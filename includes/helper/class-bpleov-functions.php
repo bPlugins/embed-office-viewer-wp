@@ -1,7 +1,7 @@
 <?php
 namespace BPLEOV\Helper;
 
-class Functions {
+class BPLEOV_Functions {
 
     /**
      * Get post meta value with fallback lookup to legacy eov_ keys.
@@ -47,8 +47,7 @@ class Functions {
         }
 
         return $default;
-    }
-
+    } 
     /**
      * Wrap premium metabox fields.
      */
@@ -69,23 +68,7 @@ class Functions {
             $field['value'] = $field['default'];
         }
         return $field;
-    }
-
-    /**
-     * Render Pro title badge.
-     */
-    public static function bpleov_pro_title( $title ) {
-        if ( function_exists( 'bpleov_fs' ) && bpleov_fs()->can_use_premium_code() ) {
-            return esc_html( $title );
-        }
-
-        return '
-            <div class="bpleov-field-title">
-                <h4>' . esc_html( $title ) . '</h4>
-                <span class="bpleov-pro-badge">PRO</span>
-            </div>
-        ';
-    }
+    } 
 
     public static function bpleov_pro_feature_list($features) {
         $html = '

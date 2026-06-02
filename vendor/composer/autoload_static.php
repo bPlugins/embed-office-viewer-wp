@@ -8,17 +8,12 @@ class ComposerStaticInit3454cafdbe9cd8a657da71eec2f30343
 {
     public static $classMap = array (
         'BPLEOVPlugin' => __DIR__ . '/../..' . '/includes/core/class-bpleov-blocks.php',
-        'BPLEOV\\Admin\\Admin' => __DIR__ . '/../..' . '/includes/admin/class-bpleov-admin.php',
-        'BPLEOV\\Core\\GlobalChangesPro' => __DIR__ . '/../..' . '/includes/core/class-bpleov-global-changes-pro.php',
-        'BPLEOV\\Core\\OfficeViewer' => __DIR__ . '/../..' . '/includes/core/class-bpleov-office-viewer.php',
-        'BPLEOV\\Helper\\Functions' => __DIR__ . '/../..' . '/includes/helper/class-bpleov-functions.php',
-        'BPLEOV\\ImportMeta' => __DIR__ . '/../..' . '/includes/admin/class-bpleov-import-meta.php',
-        'BPLEOV\\LicenseActivation' => __DIR__ . '/../..' . '/includes/admin/class-bpleov-license-activation.php',
-        'BPLEOV\\Main' => __DIR__ . '/../..' . '/includes/class-bpleov.php',
-        'BPLEOV\\MetaboxFree' => __DIR__ . '/../..' . '/includes/admin/class-bpleov-metabox-free.php',
-        'BPLEOV\\MetaboxPro' => __DIR__ . '/../..' . '/includes/admin/class-bpleov-metabox-pro.php',
-        'BPLEOV\\Services\\ProModal' => __DIR__ . '/../..' . '/includes/admin/class-bpleov-pro-modal.php',
-        'BPLEOV\\Services\\ShortcodeFree' => __DIR__ . '/../..' . '/includes/public/class-bpleov-shortcode.php',
+        'BPLEOV\\Admin\\BPLEOV_Admin' => __DIR__ . '/../..' . '/includes/admin/class-bpleov-admin.php',
+        'BPLEOV\\BPLEOV_Main' => __DIR__ . '/../..' . '/includes/class-bpleov.php',
+        'BPLEOV\\BPLEOV_MetaboxFree' => __DIR__ . '/../..' . '/includes/admin/class-bpleov-metabox-free.php',
+        'BPLEOV\\Core\\BPLEOV_OfficeViewer' => __DIR__ . '/../..' . '/includes/core/class-bpleov-office-viewer.php',
+        'BPLEOV\\Helper\\BPLEOV_Functions' => __DIR__ . '/../..' . '/includes/helper/class-bpleov-functions.php',
+        'BPLEOV\\Services\\BPLEOV_ShortcodeFree' => __DIR__ . '/../..' . '/includes/public/class-bpleov-shortcode.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
