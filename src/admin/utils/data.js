@@ -38,7 +38,7 @@ export const dashboardInfo = (info) => {
     licenseActiveNonce,
     changelogs: [
       {
-        version: "2.4.0 - 1 June, 2026",
+        version: "2.4.0 - 3 June, 2026",
         type: "new",
         list: [
           "New: Added 4 dedicated, modular settings panels (DocumentSource, ViewerEngine, DisplayDimensions, SecurityRestrictions) to group Gutenberg settings.",

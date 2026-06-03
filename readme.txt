@@ -132,7 +132,7 @@ Please report security bugs found in the source code of the Document Viewer for 
 
 == Changelog ==
 
-= 2.4.0 - 1 June, 2026 =
+= 2.4.0 - 3 June, 2026 =
 * New: Added 4 dedicated, modular settings panels (DocumentSource, ViewerEngine, DisplayDimensions, SecurityRestrictions) to group Gutenberg settings.
 * New: Added custom SVG icons inside the titles of the block settings panels.
 * Update: Redesigned Gutenberg block settings field titles to use friendly, concise terms for non-technical users.
