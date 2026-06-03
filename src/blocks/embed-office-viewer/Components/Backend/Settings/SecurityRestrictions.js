@@ -29,7 +29,7 @@ const SecurityRestrictions = () => {
       <PremiumPanel
         title={__("Security & Restrictions", "embed-office-viewer")}
         description={__(
-          "Protect your documents by disabling right-click, text selection, downloading, and full-screen options. These features are available in the Premium version.",
+          "Protect your documents by disabling right-click, downloading, and full-screen options. These features are available in the Premium version.",
           "embed-office-viewer"
         )}
         pricingUrl={pricingUrl}

@@ -46,7 +46,7 @@ const ViewerEngine = ({ attributes, setAttributes }) => {
       />
 
       <Notice status="premium" isIcon={true}>
-        {__("Unlock JS Viewer engine—available exclusively in Premium.", "embed-office-viewer")}
+        {__("Unlock Custom PDF Viewer engine—available exclusively in Premium.", "embed-office-viewer")}
       </Notice>
     </PanelBody>
   );
