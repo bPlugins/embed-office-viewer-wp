@@ -1,6 +1,6 @@
 {
   "name": "embed-office-viewer",
-  "version": "1.0.0",
+  "version": "2.4.2",
   "description": "You can Embed Microsoft Word, Excel And Powerpodint File in wordpress Using 'Document Viewer for Office' Plugin.",
   "main": "index.js",
   "author": "Tanin Rahman",
