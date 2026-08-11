@@ -109,7 +109,7 @@ export const welcomeInfo = (adminUrl) => ({
   },
   changelogs: [
     {
-      version: "2.4.2 - 06 August, 2026",
+      version: "2.4.2 - 11 August, 2026",
       type: "update",
       list: [
         "Security: Updated Freemius SDK dependency to the latest version to patch identified vulnerabilities and ensure robust plugin security.",

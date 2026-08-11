@@ -132,7 +132,7 @@ Please report security bugs found in the source code of the Document Viewer for 
 
 == Changelog ==
 
-= 2.4.2 - 06 August, 2026 =
+= 2.4.2 - 11 August, 2026 =
 * Security: Updated Freemius SDK dependency to the latest version to patch identified vulnerabilities and ensure robust plugin security.
 
 = 2.4.1 - 27 June 2026 =
