@@ -1,7 +1,7 @@
 === Document Viewer - Embed and Display Office and PDF Files ===
 Contributors: bplugins,shehabulislam, taninrahman, freemius
 Tags: Embed document, easy document embedder, pdf embedder, document viewer
-Requires at least: 6.2
+Requires at least: 6.5
 Tested up to: 7.0
 Stable tag: 2.4.2
 Requires PHP: 7.4
