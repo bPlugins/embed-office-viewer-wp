@@ -9,7 +9,7 @@ if ( ! class_exists( __NAMESPACE__ . '\BPLEOV_PromoBanner' ) ) {
     class BPLEOV_PromoBanner {
         const DISMISSED_KEY   = 'bpleov_promo_banner_dismissed_v5';
         const EXPIRATION_DATE = '2026-12-05 23:59:59';
-        const COUPON_URL      = 'https://bplugins.com/products/offic-viewer/pricing/?utm_source=admin&utm_medium=dashboard&utm_campaign=bfcm2026';
+        const COUPON_URL      = 'https://bplugins.com/products/document-viewer/pricing/?utm_source=admin&utm_medium=dashboard&utm_campaign=bfcm2026';
         private static $rendered = false;
 
         public function __construct() {
@@ -49,7 +49,7 @@ if ( ! class_exists( __NAMESPACE__ . '\BPLEOV_PromoBanner' ) ) {
                 $page = sanitize_key( $_GET['page'] );
                 if (
                     strpos( $page, 'officeviewer' ) !== false ||
-                    strpos( $page, 'officeviewer' ) !== false
+                    strpos( $page, 'embed-office-viewer' ) !== false 
                 ) {
                     return true;
                 }
@@ -441,7 +441,7 @@ if ( ! class_exists( __NAMESPACE__ . '\BPLEOV_PromoBanner' ) ) {
             $offer_link = sprintf(
                 '<a href="%s" target="_blank" rel="noopener noreferrer" style="color: #ff7a00; font-weight: 700;">%s</a>',
                 esc_url( self::COUPON_URL ),
-                esc_html__( 'Save 45% - Biggest Black Friday Sale', 'embed-office-viewer' )
+                esc_html__( 'Biggest Black Friday Sale - Save 45%', 'embed-office-viewer' )
             );
 
             $actions['special_offer'] = $offer_link;
