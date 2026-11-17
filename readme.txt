@@ -2,8 +2,8 @@
 Contributors: bplugins,shehabulislam, taninrahman, freemius
 Tags: Embed document, easy document embedder, pdf embedder, document viewer
 Requires at least: 6.5
-Tested up to: 7.0
-Stable tag: 2.4.2
+Tested up to: 7.1
+Stable tag: 2.4.3
 Requires PHP: 7.4
 Donate link: https://www.buymeacoffee.com/abuhayat
 License: GPLv3 or later
